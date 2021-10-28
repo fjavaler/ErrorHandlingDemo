@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ErrorHandlingDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @StateObject var viewModel: ContentViewModel = ContentViewModel()
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environmentObject(viewModel)
     }
+  }
 }
